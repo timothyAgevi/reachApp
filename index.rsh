@@ -4,7 +4,7 @@ export const main =
       {},
       [//the participants
       [ 'Alice',{ request:UInt,info:Bytes} ],//2nd param is participant interface(interface btn frontend and reach)
-      [ 'Bob',{want:Fun([UInt],Null)}]
+      [ 'Bob',{want:Fun([UInt],Null),got:Fun([Bytes],Null) }]
     ],
     (Alice,Bob)=> { 
         //Alice will ask Bob for some funds
@@ -25,6 +25,13 @@ export const main =
         //Alice will take them,shell share some info
         Alice.only( ()=>{
             const info=declassify(interact.info);
+        })
+        Alice.punlish(info);
+        transfer(amount).to(Alice);
+        commit();
+
+        Bob.only( ()=>{
+            interact.got(info);
         })
         exit();
     }
