@@ -3,17 +3,17 @@ export const main =
   Reach.App(
       {},
       [//the participants
-      [ 'Alice',{ request:UInt256} ],//2nd param is participant interface(interface btn frontend and reach)
+      [ 'Alice',{ request:UInt} ],//2nd param is participant interface(interface btn frontend and reach)
       [ 'Bob',{}]
     ],
     (Alice,Bob)=> { 
         //Alice will ask Bob for some funds
         Alice.only(()=>{// Alice tkes action on her own(only)
-           const amount = interact.request;
+           const amount = declassify(interact.request);//interact acess interface,declassify make info public for publish
         });
         Alice.publish(amount);//publish sending info out
         //Bob will send the funds
         //Alice willtake them
-        exit()
+        exit();
     }
   );
