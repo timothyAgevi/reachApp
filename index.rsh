@@ -4,7 +4,7 @@ export const main =
       {},
       [//the participants
       [ 'Alice',{ request:UInt} ],//2nd param is participant interface(interface btn frontend and reach)
-      [ 'Bob',{}]
+      [ 'Bob',{want:Fun([UInt],Null)}]
     ],
     (Alice,Bob)=> { 
         //Alice will ask Bob for some funds
@@ -18,7 +18,7 @@ export const main =
         commit();
         //Bob will send the funds
         Bob.only( ()=>{
-            
+            interact.want(amount);
         })
         //Alice willtake them
         exit();
