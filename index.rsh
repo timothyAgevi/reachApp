@@ -22,7 +22,8 @@ export const main =
         })
         Bob.pay(amount);// to contract
         commit();
-        //Alice will take them
+        //Alice will take them,shell share some info
+        
         exit();
     }
   );
