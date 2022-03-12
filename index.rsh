@@ -3,7 +3,7 @@ export const main =
   Reach.App(
       {},
       [//the participants
-      [ 'Alice',{ request:UInt} ],//2nd param is participant interface(interface btn frontend and reach)
+      [ 'Alice',{ request:UInt,info:Bytes} ],//2nd param is participant interface(interface btn frontend and reach)
       [ 'Bob',{want:Fun([UInt],Null)}]
     ],
     (Alice,Bob)=> { 
@@ -23,7 +23,9 @@ export const main =
         Bob.pay(amount);// to contract
         commit();
         //Alice will take them,shell share some info
-        
+        Alice.only( ()=>{
+            const info=declassify(interact.info);
+        })
         exit();
     }
   );
