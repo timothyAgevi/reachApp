@@ -4,4 +4,7 @@ export const main =
       {},
       [//the participants
     ],
-  )
+    () => {
+        exit()
+    }
+  );
