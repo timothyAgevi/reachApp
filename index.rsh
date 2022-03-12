@@ -12,7 +12,7 @@ export const main =
            const amount = declassify(interact.request);//interact acess interface,declassify make info public for publish(shared)
            assume(amount<100);//turned to runtime check on frontend
         });
-        Alice.publish(amount);//publish sending info out
+        Alice.publish(amount);//publish sending info out,ester ac neva ends with funds inside it
         //context/constraints/rules of publication,since its consensus network
         require(amount<100);//turned to runtime check inside consensus network
         commit();
