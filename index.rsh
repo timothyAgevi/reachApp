@@ -21,7 +21,8 @@ export const main =
             interact.want(amount);
         })
         Bob.pay(amount);
-        //Alice willtake them
+        commit();
+        //Alice will take them
         exit();
     }
   );
