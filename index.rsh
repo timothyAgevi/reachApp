@@ -17,6 +17,9 @@ export const main =
         require(amount<100);//turned to runtime check inside consensus network
         commit();
         //Bob will send the funds
+        Bob.only( ()=>{
+            
+        })
         //Alice willtake them
         exit();
     }
