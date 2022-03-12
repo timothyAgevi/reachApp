@@ -3,7 +3,7 @@ export const main =
   Reach.App(
       {},
       [//the participants
-      [ 'Alice',{} ],
+      [ 'Alice',{} ],//2nd param is participant interface(interface btn frontend and reach)
       [ 'Bob',{}]
     ],
     (Alice,Bob)=> { 
