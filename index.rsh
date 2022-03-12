@@ -12,8 +12,11 @@ export const main =
            const amount = declassify(interact.request);//interact acess interface,declassify make info public for publish(shared)
         });
         Alice.publish(amount);//publish sending info out
+        //context/constraints/rules of publication,since its consensus network
+        require(amount<100);
+        commit();
         //Bob will send the funds
         //Alice willtake them
-        // exit();
+        exit();
     }
   );
