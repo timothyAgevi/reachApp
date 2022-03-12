@@ -20,7 +20,7 @@ export const main =
         Bob.only( ()=>{
             interact.want(amount);
         })
-        Bob.pay(amount);
+        Bob.pay(amount);// to contract
         commit();
         //Alice will take them
         exit();
