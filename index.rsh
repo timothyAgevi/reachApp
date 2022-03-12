@@ -6,7 +6,7 @@ export const main =
       [ 'Alice',{} ],
       [ 'Bob',{}]
     ],
-    ()=> { 
+    (Alice,Bob)=> { 
         //Alice will ask Bob for some funds
         //Bob will send the funds
         //Alice willtake them
