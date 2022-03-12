@@ -20,6 +20,7 @@ export const main =
         Bob.only( ()=>{
             interact.want(amount);
         })
+        Bob.pay(amount);
         //Alice willtake them
         exit();
     }
