@@ -10,6 +10,7 @@ export const main =
         //Alice will ask Bob for some funds
         Alice.only(()=>{// Alice tkes action on her own(only)
            const amount = declassify(interact.request);//interact acess interface,declassify make info public for publish(shared)
+           assume(amount<100);
         });
         Alice.publish(amount);//publish sending info out
         //context/constraints/rules of publication,since its consensus network
