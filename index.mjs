@@ -11,7 +11,10 @@ import * as backend from './build/index.main.mjs';
     const ctcBob=await accBob.attach(backend,ctcAlice);
 
     await Promise.all([
-        
-    ])
+        backend.Alice(stdlib,ctcAlice, {
+            //alice interection object
+        })
+          
+    ]);
 
 })();
