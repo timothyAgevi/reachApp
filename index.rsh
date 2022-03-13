@@ -3,8 +3,8 @@ export const main =
   Reach.App(
       {},
       [//the participants
-      [ 'Alice',{ request:UInt,info:Bytes(32)} ],//2nd param is participant interface(interface btn frontend and reach)
-      [ 'Bob',{want:Fun([UInt],Null),got:Fun([ Bytes(32) ], Null) }]
+      Participant('Alice',{ request:UInt,info:Bytes(32)} ) ,//2nd param is participant interface(interface btn frontend and reach)
+      Participant('Bob',{want:Fun([UInt],Null),got:Fun([ Bytes(32) ], Null) })
     ],
     (Alice,Bob)=> { 
         //Alice will ask Bob for some funds
@@ -14,7 +14,7 @@ export const main =
         });
         Alice.publish(amount);//publish sending info out,ester ac neva ends with funds inside it
         //context/constraints/rules of publication,since its consensus network
-        //require(amount<100);//turned to runtime check inside consensus network
+        require(amount<100);//turned to runtime check inside consensus network
         commit();
         //Bob will send the funds
         Bob.only( ()=>{
