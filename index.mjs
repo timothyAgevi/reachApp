@@ -7,8 +7,8 @@ import * as backend from './build/index.main.mjs';
     const accAlice= await stdlib.newTestAccount(stdlib.parseCurrency(5));
     const accBob= await stdlib.newTestAccount(stdlib.parseCurrency(10));
     //contracts
-    const ctcAlice=await accAlice.deploy(backend);
-    const ctcBob=await accBob.attach(backend,ctcAlice);
+    const ctcAlice=await  accAlice.contract(backend);//accAlice.deploy(backend) is depreciated
+    const ctcBob=await accBob.contract(backend,ctcAlice);// acc.attach(bin, info) is deprecated
 
     await Promise.all([
         backend.Alice(stdlib,ctcAlice, {

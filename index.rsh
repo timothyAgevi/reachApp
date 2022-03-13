@@ -14,7 +14,7 @@ export const main =
         });
         Alice.publish(amount);//publish sending info out,ester ac neva ends with funds inside it
         //context/constraints/rules of publication,since its consensus network
-        require(amount<100);//turned to runtime check inside consensus network
+       // require(amount<100);//turned to runtime check inside consensus network
         commit();
         //Bob will send the funds
         Bob.only( ()=>{
