@@ -25,5 +25,6 @@ import * as backend from './build/index.main.mjs';
         }),
           
     ]);
-     
+     await showBalance('Alice',accAlice);
+     await showBalance('Bob',accBob);
 })();
