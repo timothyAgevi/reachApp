@@ -22,7 +22,7 @@ const showBalance=async (who ,acc)=>{
     await showBalance('Bob',accBob);
 
     await Promise.all([
-        backend.Alice(ctcAlice,stdlib, {
+        backend.Alice(stdlib, ctcAlice,{
             //Alice interection object
             request:stdlib.parseCurrency(5),//convert to tokenvalue e.g wei
             info :'If you wera these,you can see through evil illusions.'
