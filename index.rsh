@@ -27,7 +27,7 @@ export const main =
             const info=declassify(interact.info);
         })
         Alice.publish(info);
-        transfer(amount).to(Alice);
+        transfer(amount).to(Alice);//transfer amount to Alice
         commit();
 
         Bob.only( ()=>{
