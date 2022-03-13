@@ -13,7 +13,11 @@ import * as backend from './build/index.main.mjs';
     await Promise.all([
         backend.Alice(stdlib,ctcAlice, {
             //alice interection object
-        })
+        }),
+        backend.Bob(stdlib,ctcBob,{
+        //Bob's interaction object
+        
+        }),
           
     ]);
 
