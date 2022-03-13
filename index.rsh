@@ -1,7 +1,7 @@
-'reach 0.1';
+'reach 0.1'; 
 export const main =
   Reach.App(
-      {},
+      {},//compiling options
       [//the participants
       Participant('Alice',{ request:UInt,info:Bytes(32)} ) ,//2nd param is participant interface(interface btn frontend and reach)
       Participant('Bob',{want:Fun([UInt],Null),got:Fun([ Bytes(32) ], Null) })
