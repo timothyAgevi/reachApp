@@ -25,6 +25,7 @@ export const main =
         //Alice will take them,shell share some info
         Alice.only( ()=>{
             const info= declassify(interact.info);//error
+            
         })
         Alice.publish(info);
         transfer(amount).to(Alice);//transfer amount to Alice
