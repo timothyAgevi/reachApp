@@ -11,10 +11,10 @@ import * as backend from './build/index.main.mjs';
     const ctcBob=await accBob.contract(backend,ctcAlice);// acc.attach(bin, info) is deprecated
 
     await Promise.all([
-        backend.Alice(stdlib,ctcAlice, {
+        backend.Alice(ctcAlice,stdlib, {
             //Alice interection object
             request:stdlib.parseCurrency(5),//convert to tokenvalue e.g wei
-            info :" this is the forbidden fruit"
+            info :'If you wera these,you can see through evil illusions.'
 
 
         }),
@@ -25,5 +25,5 @@ import * as backend from './build/index.main.mjs';
         }),
           
     ]);
-
+     
 })();
