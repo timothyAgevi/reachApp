@@ -3,12 +3,20 @@ import * as backend from './build/index.main.mjs';
 
 (async ()=>{
     const stdlib =await loadStdlib();//env variables,local nodes
+
+
+
+
+    await showBalance('Alice',accAlice);
+    await showBalance('Bob',accBob);
+
     //accounts
     const accAlice= await stdlib.newTestAccount(stdlib.parseCurrency(5));
     const accBob= await stdlib.newTestAccount(stdlib.parseCurrency(10));
     //contracts
     const ctcAlice=await  accAlice.contract(backend);//accAlice.deploy(backend) is depreciated
     const ctcBob=await accBob.contract(backend,ctcAlice);// acc.attach(bin, info) is deprecated
+
 
     await Promise.all([
         backend.Alice(ctcAlice,stdlib, {
