@@ -5,7 +5,10 @@ import * as backend from './build/index.main.mjs';
     const stdlib =await loadStdlib();//env variables,local nodes
 
 
-
+//showBalance function
+const showBalance=async (who ,acc)=>{ 
+    console.log(`${who}'s balance  is ${stdlib.formatCurrency(await stdlib.balanceOf(acc)) }`) 
+}
 
     await showBalance('Alice',accAlice);
     await showBalance('Bob',accBob);
@@ -28,7 +31,7 @@ import * as backend from './build/index.main.mjs';
         }),
         backend.Bob(stdlib,ctcBob,{
         //Bob's interact object
-         want:(amt)=>console.log(`Alice asks me,Bob,for ${stdlib.formatcurrency(amt)}`),
+         want:(amt)=>console.log(`Alice asks me,Bob,for ${stdlib.formatCurrency(amt)}`),
          got:(secret)=>console.log(`Alice secret is ${stdlib.hexToString(secret)}`)
         }),
           
