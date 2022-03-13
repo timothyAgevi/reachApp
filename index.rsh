@@ -10,7 +10,7 @@ export const main =
         //Alice will ask Bob for some funds
         Alice.only(()=>{// Alice tkes action on her own(only)
            const amount = declassify(interact.request);//interact acess interface,declassify make info public for publish(shared)
-           //assume(amount<100);//turned to runtime check on frontend
+            assume(amount<100);//turned to runtime check on frontend
         });
         Alice.publish(amount);//publish sending info out,ester ac neva ends with funds inside it
         //context/constraints/rules of publication,since its consensus network
