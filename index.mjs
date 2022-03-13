@@ -10,9 +10,6 @@ const showBalance=async (who ,acc)=>{
     console.log(`${who}'s balance  is ${stdlib.formatCurrency(await stdlib.balanceOf(acc)) }`) 
 }
 
-    await showBalance('Alice',accAlice);
-    await showBalance('Bob',accBob);
-
     //accounts
     const accAlice= await stdlib.newTestAccount(stdlib.parseCurrency(5));
     const accBob= await stdlib.newTestAccount(stdlib.parseCurrency(10));
@@ -20,6 +17,9 @@ const showBalance=async (who ,acc)=>{
     const ctcAlice=await  accAlice.contract(backend);//accAlice.deploy(backend) is depreciated
     const ctcBob=await accBob.contract(backend,ctcAlice);// acc.attach(bin, info) is deprecated
 
+
+    await showBalance('Alice',accAlice);
+    await showBalance('Bob',accBob);
 
     await Promise.all([
         backend.Alice(ctcAlice,stdlib, {
@@ -33,7 +33,7 @@ const showBalance=async (who ,acc)=>{
         //Bob's interact object
          want:(amt)=>console.log(`Alice asks me,Bob,for ${stdlib.formatCurrency(amt)}`),
          got:(secret)=>console.log(`Alice secret is ${stdlib.hexToString(secret)}`)
-        }),
+        })
           
     ]);
      await showBalance('Alice',accAlice);
